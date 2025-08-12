@@ -1,8 +1,8 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { IProduct } from "../../types";
+import type { ICartProduct } from "../../types";
 
 interface IWishes {
-    value: IProduct[]
+    value: ICartProduct[]
 }
 
 const initialState: IWishes = {
@@ -13,7 +13,7 @@ export const wishesSlice = createSlice({
     name: 'wishes',
     initialState,
     reducers: {
-        addToWishes: (state, actions: PayloadAction<IProduct>) => {
+        addToWishes: (state, actions: PayloadAction<ICartProduct>) => {
             const index = state.value.findIndex((product) => product.id == actions.payload.id)
 
             if (index < 0) {

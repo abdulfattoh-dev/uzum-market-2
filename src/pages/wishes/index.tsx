@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import type { RootState } from '../../redux'
 
 const Wishes = () => {
-  const wishes = useSelector((state: RootState) => state.wishes.data)
+  const wishes = useSelector((state: RootState) => state.wishes.value)
 
   return (
     <div>
