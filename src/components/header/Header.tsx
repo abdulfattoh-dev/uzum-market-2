@@ -2,6 +2,7 @@ import React from 'react'
 import heart from "../../assets/heart.svg";
 import basket from "../../assets/basket.svg";
 import logo from "../../assets/logo.svg";
+import productCategory from "../../assets/productCategory.png";
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -34,7 +35,23 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <div></div>
+                <div className='h-9.5 mt-2.5 mb-3 flex items-center'>
+                    <ul className='flex gap-2.5 text-[#4D4F59]'>
+                        <li>
+                            <NavLink to={''} className={({ isActive }) => `flex gap-1 ${isActive ? 'text-black' : 'text-[#4D4F59]'}`}>
+                                <div className='w-6'>
+                                    <img src={productCategory} alt="" />
+                                </div>
+                                <span>Products</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'recipes'} className={({ isActive }) => `${isActive ? 'text-black' : 'text-[#4D4F59]'}`}>
+                                Recipes
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
     )

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { ICartProduct } from "../../types";
+import type { ICartProduct, IProduct } from "../../types";
 
 interface ICard {
     value: ICartProduct[]
@@ -13,7 +13,7 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addToCart: (state, actions: PayloadAction<ICartProduct>) => {
+        addToCart: (state, actions: PayloadAction<IProduct>) => {
             const index = state.value.findIndex((product) => product.id == actions.payload.id)
 
             if (index < 0) {
@@ -22,16 +22,16 @@ export const cartSlice = createSlice({
 
             localStorage.setItem('cart', JSON.stringify(state.value))
         },
-        deleteFromCart: (state, actions: PayloadAction<ICartProduct>) => {
+        deleteFromCart: (state, actions: PayloadAction<IProduct>) => {
             const index = state.value.findIndex((product) => product.id == actions.payload.id)
             state.value.splice(index, 1)
             localStorage.setItem('cart', JSON.stringify(state.value))
         },
-        incAmount: (state, actions: PayloadAction<ICartProduct>) => {
+        incAmount: (state, actions: PayloadAction<IProduct>) => {
             state.value = state.value.map((product) => product.id == actions.payload.id ? { ...product, amount: product.amount + 1 } : product)
             localStorage.setItem('cart', JSON.stringify(state.value))
         },
-        decAmount: (state, actions: PayloadAction<ICartProduct>) => {
+        decAmount: (state, actions: PayloadAction<IProduct>) => {
             state.value = state.value.map((product) => product.id == actions.payload.id ? { ...product, amount: product.amount - 1 } : product)
             localStorage.setItem('cart', JSON.stringify(state.value))
         },

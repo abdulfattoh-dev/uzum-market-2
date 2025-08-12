@@ -1,18 +1,15 @@
-import React, { lazy, useEffect, useState } from 'react'
-import { api } from '../../api'
+import React, { lazy } from 'react'
+import { useFetch } from '../../hooks/useFetch'
+import type { IResponse } from '../../types'
 
 const ProductView = lazy(() => import("../../components/product-view/ProductView"))
 
 const Home = () => {
-    const [data, setData] = useState<null>(null)
-    useEffect(() => {
-        api
-            .get("products")
-            .then((res) => setData(res.data?.products))
-    }, [])
+    const { data } = useFetch<IResponse>("/products", { limit: 10, skip: 0 })
+
     return (
         <div>
-            <ProductView title='Famous' data={data} />
+            <ProductView title='Products' data={data?.products} />
         </div>
     )
 }

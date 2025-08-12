@@ -1,7 +1,7 @@
 import React, { type FC } from 'react'
 import heart from "../../assets/heart.svg";
 import star from "../../assets/star.svg";
-import type { ICartProduct } from '../../types';
+import type { IProduct } from '../../types';
 
 import { CreditCard } from 'lucide-react';
 import { useDispatch } from 'react-redux';
@@ -10,7 +10,7 @@ import { addToCart } from '../../redux/features/cart';
 
 interface IProps {
     title: string
-    data: ICartProduct[] | null
+    data: IProduct[] | undefined
 }
 
 const ProductView: FC<IProps> = ({ title, data }) => {
@@ -21,7 +21,7 @@ const ProductView: FC<IProps> = ({ title, data }) => {
             <h2 className='text-[28px] font-bold'>{title}</h2>
             <div className='grid grid-cols-5 gap-x-5 gap-y-8 mt-[21px] mb-10'>
                 {
-                    data?.map((product: ICartProduct) => (
+                    data?.map((product: IProduct) => (
                         <div key={product.id}>
                             <div className='relative'>
                                 <div className='w-[232px] h-[309.3299865722656px] rounded-lg bg-[#EFEFEF]'>
