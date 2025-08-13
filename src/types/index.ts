@@ -36,3 +36,12 @@ export interface IResResipe {
     total: number
     skip: number
 }
+
+export interface IData {
+    id?: number,
+    image?: string
+    name: string
+    birthdate: string
+    address: string
+    email: string
+}

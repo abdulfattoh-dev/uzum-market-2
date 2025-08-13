@@ -50,6 +50,11 @@ const Header = () => {
                                 Recipes
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink to={'students'} className={({ isActive }) => `${isActive ? 'text-black' : 'text-[#4D4F59]'}`}>
+                                Students
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>
