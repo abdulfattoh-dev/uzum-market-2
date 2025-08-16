@@ -45,3 +45,13 @@ export interface IData {
     address: string
     email: string
 }
+
+export interface ICar {
+    id: string
+    name: string
+    price: number | string
+    brand: string
+    color: string
+    releaseDate: string
+    power: number | string
+}

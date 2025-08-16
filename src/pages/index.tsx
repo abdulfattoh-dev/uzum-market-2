@@ -8,6 +8,7 @@ const Recipes = lazy(() => import('./recipes'))
 const RecipeDetail = lazy(() => import('./recipes/RecipeDetail'))
 
 const Students = lazy(() => import('./students'))
+const Cars = lazy(() => import('./cars'))
 const Wishes = lazy(() => import('./wishes'))
 const Cart = lazy(() => import('./cart'))
 
@@ -23,6 +24,7 @@ const MainRoutes = () => {
                                 { path: 'recipes', element: <Recipes /> },
                                 { path: 'recipes/:id', element: <RecipeDetail /> },
                                 { path: 'students', element: <Students /> },
+                                { path: 'cars', element: <Cars /> },
                                 { path: 'wishes', element: <Wishes /> },
                                 { path: 'cart', element: <Cart /> }
                             ]
