@@ -5,5 +5,5 @@ export const api = axios.create({
 })
 
 export const api2 = axios.create({
-    baseURL: 'http://interchange.proxy.rlwy.net:42407'
+    baseURL: 'https://interchange.proxy.rlwy.net:42407'
 })
