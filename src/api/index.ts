@@ -5,5 +5,5 @@ export const api = axios.create({
 })
 
 export const api2 = axios.create({
-    baseURL: 'car-production-9848.up.railway.app'
+    baseURL: 'https://car-production-9848.up.railway.app'
 })
