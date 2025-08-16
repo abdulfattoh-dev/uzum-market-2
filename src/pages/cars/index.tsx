@@ -16,7 +16,7 @@ const initialState: ICar = {
 }
 
 const Cars = () => {
-    const { createCar, deleteCar, getCarById, getCars, updateCar } = useCar()
+    const { createCar, deleteCar, getCars, updateCar } = useCar()
     const [formStudent, setFormStudent] = useState<ICar>(initialState)
     const [updateStudent, setUpdateStudent] = useState<ICar | null>(null)
     const { data, isLoading } = getCars()
